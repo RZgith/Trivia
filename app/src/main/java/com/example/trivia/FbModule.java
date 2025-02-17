@@ -26,6 +26,7 @@ public class FbModule {
                         if(str!=null) {
                             ((MainActivity)context).setNewColorFromFb(str);
 
+
                         }
                     }
 
