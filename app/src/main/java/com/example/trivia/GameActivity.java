@@ -2,9 +2,12 @@ package com.example.trivia;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class GameActivity extends AppCompatActivity implements View.OnClickListener {
@@ -14,12 +17,20 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tvQuestionNumber,tvPoints,tvGameOver;
     private Question currentQuestion;
     private Collection collection;
+    private LinearLayout ll2;
+    private String color;
     private int points=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        ll2=findViewById(R.id.activity_game);
+        Intent i=getIntent();
+        color=i.getStringExtra("color");
+        if(!"1".equals(color)&& color != null){setBackgrounColor2(color);}
+
+
 
         collection=new Collection();
 
@@ -62,6 +73,35 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
             customDialog.show();
         }
 
+    }
+    public void setBackgrounColor2(String color)
+    {
+        switch (color)
+        {
+            case "Red":
+            {
+                ll2.setBackgroundColor(Color.argb(255,240,128,128));
+                break;
+            }
+            case "Blue":
+            {
+                ll2.setBackgroundColor(Color.argb(255,135,206,235));
+                break;
+            }
+            case "Pink":
+            {
+                ll2.setBackgroundColor(Color.argb(255,219,112,147));
+                break;
+            }
+
+            case "Yellow":
+            {
+                ll2.setBackgroundColor(Color.argb(255,255,250,205));
+                break;
+            }
+            default:
+                ll2.setBackgroundColor(Color.WHITE);
+        }
     }
 
     @Override
