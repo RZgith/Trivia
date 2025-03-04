@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onInstruction(View view) {
+        Intent intent=new Intent(this, InstructionActivity2.class);
+        startActivity(intent);
     }
 
     public void setNewColorFromFb(String str) {

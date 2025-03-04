@@ -16,7 +16,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
     private TextView tvQuestion;
     private TextView tvQuestionNumber,tvPoints,tvGameOver;
     private Question currentQuestion;
-    private Collection collection;
+    private Collection2 collection;
     private LinearLayout ll2;
     private String color;
     private int points=0;
@@ -32,7 +32,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
-        collection=new Collection();
+        collection=new Collection2();
 
         tvQuestion=findViewById(R.id.tvQuestion);
         btna1=findViewById(R.id.btna1);
@@ -56,6 +56,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
 
 
     }
+
 
     private void nextQuestion() {
         if (collection.isNotLastQuestion())
