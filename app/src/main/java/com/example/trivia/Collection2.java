@@ -1,15 +1,15 @@
 package com.example.trivia;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Collection2  {
-    private ArrayList<Question> arr2,arr;
+    private ArrayList<Question> arr,arr2;
     private int index;
 
     public Collection2()
     {
         arr=new ArrayList<>();
-        arr2=new ArrayList<>();
         Question q1=new Question("1+10","11","3","100","110",1);
         Question q2=new Question("1+2","12","3","100","30",2);
         Question q3=new Question("1+4","15","3","5","11",3);
@@ -28,6 +28,9 @@ public class Collection2  {
         arr.add(q6);
         arr.add(q7);
         arr.add(q8);
+        Collections.shuffle(arr);
+
+
 
 
 
@@ -35,13 +38,9 @@ public class Collection2  {
     public void initQuestion()
     {
         index=0;
-        while(!arr.isEmpty()) {
-            int x=(int)Math.random()*arr.size();
-            arr2.add(arr.get(x));
-            arr.remove(arr.get(x));
-        }
 
-        arr=arr2;
+        Collections.shuffle(arr);
+
 
     }
 
